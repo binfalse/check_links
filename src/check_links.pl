@@ -1,4 +1,19 @@
 #!/usr/bin/perl
+# This file is part of check_links - Monitor web Resources
+# Copyright (C) 2017 Martin Scharm <https://binfalse.de/contact/>
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 use strict;
 use warnings;
@@ -46,11 +61,11 @@ sub help
 		print STDERR "\t--content|-c   \texpected content within the response\n";
 		print STDERR "\t--referer|-r   \treferer to be used when sending the request\n";
 		print STDERR "\t--user-agent   \tpretend to be that user agent\n";
-		print STDERR "\t--header       \texpected HTTP header value as TYPE=VALUE (e.g. -h content-length=123) -- multiple options possible; value may be a regex\n";
-		print STDERR "\t--cookie       \tsent a cookie NAME=VALUE (e.g. -h content-length=123) -- multiple options possible\n";
+		print STDERR "\t--header       \texpected HTTP header value as KEY=VALUE (e.g. -h content-length=123) -- multiple options possible; value may be a regex\n";
+		print STDERR "\t--cookie       \tsent a cookie NAME=VALUE (e.g. -c userid=karl) -- multiple options possible\n";
 		print STDERR "\t--accept|-a    \tthe accept-header to be sent\n";
 		print STDERR "\t--follow|-f    \tshould we follow redirects?\n";
-		print STDERR "\t--timeout|-t   \ttimeout for a single check\n";
+		print STDERR "\t--timeout|-t   \tnumber of seconds to wait before timeout\n";
 		print STDERR "\t--help|-h      \tshow this help\n\n";
 		print STDERR "example: $0 -s 200 -f -c 'Martin Scharm' -r lesscomplex.org -a text/html --content-type text/html -u curl -h x-frame-options=DENY -h x-content-type-options=nosniff -c uid=abc123 -u binfalse.de \n\n";
     die ("$msg\n");
