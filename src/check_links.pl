@@ -143,7 +143,7 @@ sub max ($$) { $_[$_[0] < $_[1]] }
 			{
 				my @h = split (/=/, $head);
 				my $v = $response->header ($h[0]);
-				my $pattern = $h[1];
+				my $pattern = join '=', @h[1..$#h];
 				
 #  				print "check ". $h[0] . " == " . $pattern."\n";
 #  				print $v."\n";
