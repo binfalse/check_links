@@ -148,7 +148,7 @@ sub max ($$) { $_[$_[0] < $_[1]] }
 #  				print "check ". $h[0] . " == " . $pattern."\n";
 #  				print $v."\n";
 				
-				if ($v =~ /$pattern/)
+				if ($v =~ /$pattern/ or $v eq $pattern)
 				{
 					$hok++;
 # 					print "same\n";
